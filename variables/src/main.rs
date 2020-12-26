@@ -1,4 +1,3 @@
-
 fn main() {
     mut_and_immutable();
     var_and_constants();
@@ -11,6 +10,7 @@ fn main() {
     println!("The value of x is: {}", x);
 
     for_loop();
+    for_loop_rev();
 }
 
 fn mut_and_immutable() {
@@ -50,4 +50,11 @@ fn for_loop() {
     for element in a.iter() {
         println!("the value is: {}", element)
     }
+}
+
+fn for_loop_rev() {
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
 }
