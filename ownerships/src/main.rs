@@ -76,4 +76,51 @@ fn main() {
             (s, length)
         }
     }
+
+    // 参照と借用
+    {
+        let s1 = String::from("hello");
+        let len = calculate_length(&s1);
+
+        println!("The length of '{}' is {}.", s1, len);
+
+        fn calculate_length(s: &String) -> usize {
+            s.len()
+        }
+    }
+
+    // 可変な参照
+    {
+        // let s = String::from("hello");
+        // change(&s);
+        //
+        // fn change(some_string: &String) {
+        //     some_string.push_str(", world!");
+        // }
+    }
+    {
+        let mut s = String::from("hello");
+        change(&mut s);
+        println!("{}", s);
+
+        fn change(some_string: &mut String) {
+            some_string.push_str(", world!");
+        }
+
+    }
+
+    // 宙に浮いた参照
+    {
+        let reference_to_nothing = dangle();
+        println!("{}", reference_to_nothing);
+
+        // fn dangle() -> &String {
+        //     let s = String::from("hello");
+        //     &s
+        // }
+        fn dangle() -> String {
+            let s = String::from("hello");
+            s
+        }
+    }
 }
