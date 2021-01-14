@@ -123,4 +123,87 @@ fn main() {
             s
         }
     }
+
+    // スライス型
+    {
+        fn first_word(s: &String) -> usize {
+            let bytes = s.as_bytes();
+
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return i;
+                }
+            }
+
+            s.len()
+        }
+
+        let mut s = String::from("hello world");
+        let word = first_word(&s);
+        println!("{} is {}", s, word);
+        s.clear();
+        println!("{} is {}", s, word);
+    }
+
+    // 文字列スライス
+    {
+        {
+            let s = String::from("hello world");
+            let hello = &s[0..5];
+            let world = &s[6..11];
+            println!("{} {}", hello, world);
+        }
+
+        {
+            fn first_word(s: &String) -> &str {
+                let bytes = s.as_bytes();
+
+                for (i, &item) in bytes.iter().enumerate() {
+                    if item == b' ' {
+                        return &s[0..i];
+                    }
+                }
+
+                &s[..]
+            }
+
+            let mut s = String::from("hello world");
+            let word = first_word(&s);
+            println!("{} is {}", s, word);
+            s.clear();
+        }
+
+        // {
+        //     let s = "Hello, world!";
+        // }
+
+    }
+
+    // 引数としての文字列スライス
+    {
+        fn first_word(s: &str) -> &str {
+            let bytes = s.as_bytes();
+
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return &s[0..i];
+                }
+            }
+
+            &s[..]
+        }
+
+        let my_string = String::from("hello world");
+        let word = first_word(&my_string[..]);
+        println!("first word is {}", word);
+
+        let my_string_literal = "hello world";
+        let word = first_word(&my_string_literal[..]);
+        println!("first word is {}", word);
+
+        let word = first_word(my_string_literal);
+        println!("first word is {}", word);
+
+    }
+
 }
