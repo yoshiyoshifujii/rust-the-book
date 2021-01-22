@@ -33,7 +33,10 @@ fn main() {
             }
         }
 
-        let user1 = build_user(String::from("someone@example.com"), String::from("someusername123"));
+        let user1 = build_user(
+            String::from("someone@example.com"),
+            String::from("someusername123"),
+        );
 
         print_user(&user1);
     }
@@ -48,12 +51,15 @@ fn main() {
             }
         }
 
-        let user1 = build_user(String::from("someone@example.com"), String::from("someusername123"));
+        let user1 = build_user(
+            String::from("someone@example.com"),
+            String::from("someusername123"),
+        );
 
         print_user(&user1);
 
         let user2 = User {
-            email: String:: from("another@example.com"),
+            email: String::from("another@example.com"),
             ..user1
         };
 
@@ -69,5 +75,8 @@ struct User {
 }
 
 fn print_user(user: &User) {
-    println!("{}, {}, {}, {}", user.email, user.username, user.sign_in_count, user.active);
+    println!(
+        "{}, {}, {}, {}",
+        user.email, user.username, user.sign_in_count, user.active
+    );
 }
