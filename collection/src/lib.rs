@@ -62,6 +62,7 @@ mod tests {
     /// Enumを使って複数の型を保持する
     #[test]
     fn keep_some_type_use_to_enum() {
+        #[derive(Debug)]
         enum SpreadsheetCell {
             Int(i32),
             Float(f64),
@@ -73,5 +74,9 @@ mod tests {
             SpreadsheetCell::Text(String::from("blue")),
             SpreadsheetCell::Float(10.12),
         ];
+
+        println!("{:?}", row);
     }
 }
+
+mod collection_string;
