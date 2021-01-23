@@ -150,4 +150,17 @@ fn main() {
         let none = plus_one(None);
         println!("{:?} {:?}", six, none);
     }
+
+    // if letで簡潔なフロー制御
+    {
+        let some_u8_value = Some(3);
+        match some_u8_value {
+            Some(3) => println!("there"),
+            _ => (),
+        }
+
+        if let Some(3) = some_u8_value {
+            println!("there");
+        }
+    }
 }
