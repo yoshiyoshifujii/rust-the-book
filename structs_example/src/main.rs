@@ -79,5 +79,29 @@ fn main() {
             rect1.area()
         );
     }
+
+    // より引数の多いメソッド
+    {
+        #[derive(Debug)]
+        struct Rectangles {
+            width: u32,
+            height: u32,
+        }
+
+        impl Rectangles {
+
+            fn can_hold(&self, _rectangle: &Rectangles) -> bool {
+                self.width > _rectangle.width && self.height > _rectangle.height
+            }
+        }
+
+        let rect1 = Rectangles { width: 30, height: 50 };
+        let rect2 = Rectangles { width: 10, height: 40 };
+        let rect3 = Rectangles { width: 60, height: 45 };
+
+        println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+        println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
+
+    }
 }
 
