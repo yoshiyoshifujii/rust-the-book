@@ -103,5 +103,23 @@ fn main() {
         println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
     }
+
+    // 関連関数
+    {
+        #[derive(Debug)]
+        struct Rectangles {
+            width: u32,
+            height: u32,
+        }
+
+        impl Rectangles {
+            fn square(size: u32) -> Rectangles {
+                Rectangles { width: size, height: size }
+            }
+        }
+
+        println!("{:#?}", Rectangles::square(30));
+
+    }
 }
 
