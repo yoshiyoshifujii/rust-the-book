@@ -121,5 +121,35 @@ fn main() {
         println!("{:#?}", Rectangles::square(30));
 
     }
-}
 
+    // 複数のimplブロック
+    {
+        #[derive(Debug)]
+        struct Rectangles {
+            width: u32,
+            height: u32,
+        }
+
+        impl Rectangles {
+            fn area(&self) -> u32 {
+                self.width * self.height
+            }
+        }
+
+        impl Rectangles {
+            fn can_hold(&self, other: &Rectangles) -> bool {
+                self.width > other.width && self.height > other.height
+            }
+        }
+
+        impl Rectangles {
+            fn square(size: u32) -> Rectangles {
+                Rectangles { width: size, height: size }
+            }
+        }
+
+        let rect1 = Rectangles::square(30);
+        let rect2 = Rectangles::square(40);
+        println!("{}, {}", rect1.area(), rect1.can_hold(&rect2));
+    }
+}
