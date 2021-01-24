@@ -80,3 +80,4 @@ mod tests {
 }
 
 mod collection_string;
+mod collection_hashmap;

@@ -1,10 +1,5 @@
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-
     /// 文字列を生成する
     #[test]
     fn new_string() {
