@@ -14,8 +14,8 @@ mod tests {
 
     #[test]
     fn 片付け() {
-        let c = CustomSmartPointer { data: String::from("my stuff") };
-        let d = CustomSmartPointer { data: String::from("other stuff") };
+        CustomSmartPointer { data: String::from("my stuff") };
+        CustomSmartPointer { data: String::from("other stuff") };
         println!("CustomSmartPointer created.")
     }
 
