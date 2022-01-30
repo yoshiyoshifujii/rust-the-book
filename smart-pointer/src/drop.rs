@@ -9,6 +9,7 @@ impl Drop for CustomSmartPointer {
 }
 
 #[cfg(test)]
+#[allow(unused_variables)]
 mod tests {
     use crate::drop::CustomSmartPointer;
 
