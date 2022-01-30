@@ -15,14 +15,20 @@ mod tests {
 
     #[test]
     fn 片付け() {
-        let c = CustomSmartPointer { data: String::from("my stuff") };
-        let d = CustomSmartPointer { data: String::from("other stuff") };
+        let c = CustomSmartPointer {
+            data: String::from("my stuff"),
+        };
+        let d = CustomSmartPointer {
+            data: String::from("other stuff"),
+        };
         println!("CustomSmartPointer created.")
     }
 
     #[test]
     fn 落ちる() {
-        let c = CustomSmartPointer { data: String::from("some data") };
+        let c = CustomSmartPointer {
+            data: String::from("some data"),
+        };
         print!("CustomSmartPointer created.");
         drop(c);
         println!("CustomSmartPointer dropped before the end of main.");

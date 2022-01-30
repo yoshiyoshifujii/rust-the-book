@@ -20,8 +20,8 @@ mod tests {
 #[cfg(test)]
 #[allow(unused_variables)]
 mod tests2 {
-    use std::rc::Rc;
     use crate::rc::tests2::List::{Cons, Nil};
+    use std::rc::Rc;
 
     #[derive(Debug)]
     enum List {
