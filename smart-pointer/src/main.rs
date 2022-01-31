@@ -2,6 +2,7 @@ mod deref;
 mod drop;
 mod rc;
 mod refcell;
+mod leak;
 
 use crate::List::{Cons, Nil};
 
