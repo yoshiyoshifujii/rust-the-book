@@ -3,6 +3,7 @@ mod drop;
 mod rc;
 mod refcell;
 mod leak;
+mod tree;
 
 use crate::List::{Cons, Nil};
 
