@@ -1,10 +1,10 @@
 #[cfg(test)]
 mod test {
-    pub struct Post {
+    struct Post {
         content: String,
     }
 
-    pub struct DraftPost {
+    struct DraftPost {
         content: String,
     }
 
@@ -13,23 +13,23 @@ mod test {
     }
 
     impl Post {
-        pub fn new() -> DraftPost {
+        fn new() -> DraftPost {
             DraftPost {
                 content: String::new(),
             }
         }
 
-        pub fn content(&self) -> &str {
+        fn content(&self) -> &str {
             &self.content
         }
     }
 
     impl DraftPost {
-        pub fn add_text(&mut self, text: &str) {
+        fn add_text(&mut self, text: &str) {
             self.content.push_str(text);
         }
 
-        pub fn request_review(self) -> PendingReviewPost {
+        fn request_review(self) -> PendingReviewPost {
             PendingReviewPost {
                 content: self.content,
             }
@@ -37,7 +37,7 @@ mod test {
     }
 
     impl PendingReviewPost {
-        pub fn approve(self) -> Post {
+        fn approve(self) -> Post {
             Post {
                 content: self.content,
             }
